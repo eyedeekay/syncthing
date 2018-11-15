@@ -13,7 +13,7 @@ import (
 	"sync"
 	//"time"
 
-	"github.com/syncthing/syncthing/lib/config"
+	"github.com/eyedeekay/syncthing/lib/config"
     "github.com/syncthing/syncthing/lib/nat"
     "github.com/eyedeekay/sam3"
 )
@@ -40,7 +40,7 @@ type i2pListener struct {
 type i2pListenerFactory struct{}
 
 func (g *i2pListener) maybeGenerateKeys() (*sam3.I2PKeys, error) {
-    g.sam, g.err = sam3.NewSAM(g.cfg.Options.i2pSAMPort)
+    g.sam, g.err = sam3.NewSAM(g.cfg.Options.I2PSAMPort)
     if err != nil {
         return nil, err
     }

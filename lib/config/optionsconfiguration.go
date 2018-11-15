@@ -54,6 +54,7 @@ type OptionsConfiguration struct {
 
 	/*Overlay-network specific options for Tor and i2p users*/
 	SetEnableTor   bool   `xml:"setEnableTor" json:"setEnableTor" default:"false"`
+    TorSOCKSPort string `xml:"torSOCKSPort" json:"torSOCKSPort" default:"127.0.0.1:9050"`
 	TorControlPort string `xml:"torControlPort" json:"torControlPort" default:"127.0.0.1:9051"`
 	SetEnableI2P   bool   `xml:"setEnableI2P" json:"setEnableI2P" default:"false"`
 	I2PSAMPort     string `xml:"i2pSAMPort" json:"i2pSAMPort" default:"127.0.0.1:7657"`
