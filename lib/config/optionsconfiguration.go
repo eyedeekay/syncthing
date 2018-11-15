@@ -52,6 +52,16 @@ type OptionsConfiguration struct {
 	DefaultFolderPath       string   `xml:"defaultFolderPath" json:"defaultFolderPath" default:"~"`
 	SetLowPriority          bool     `xml:"setLowPriority" json:"setLowPriority" default:"true"`
 
+	/*Overlay-network specific options for Tor and i2p users*/
+	SetEnableTor   bool   `xml:"setEnableTor" json:"setEnableTor" default:"false"`
+	TorControlPort string `xml:"torControlPort" json:"torControlPort" default:"127.0.0.1:9051"`
+	SetEnableI2P   bool   `xml:"setEnableI2P" json:"setEnableI2P" default:"false"`
+	I2PSAMPort     string `xml:"i2pSAMPort" json:"i2pSAMPort" default:"127.0.0.1:7657"`
+	/*By default when using Tor or i2p only, disable NAT traversal and stuff
+	  like that to prevent leaks and because overly networks can do it for us.
+	  optionally connect promiscously. */
+	SetStrictDarknet bool `xml:"setStrictDarknet" json:"setStrictDarknet" default:"true"`
+
 	DeprecatedUPnPEnabled        bool     `xml:"upnpEnabled,omitempty" json:"-"`
 	DeprecatedUPnPLeaseM         int      `xml:"upnpLeaseMinutes,omitempty" json:"-"`
 	DeprecatedUPnPRenewalM       int      `xml:"upnpRenewalMinutes,omitempty" json:"-"`
